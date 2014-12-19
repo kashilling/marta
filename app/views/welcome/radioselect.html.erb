@@ -1,0 +1,17 @@
+<div>
+<h2>Choose a Station!</h2>
+<p><strong>Which MARTA station are you at?</strong></p>
+</div>
+
+<div>
+	<%= form_tag("/welcome/yourbuses", method: "get") do %>
+	<%= label_tag(:station, "") %>
+	<br>
+	<% @stations.each do |s| %>
+		<!-- loop through the array of stations to set next radio 
+		button -->
+	<%= radio_button_tag(:station, s) %><%= s %><br>
+	<% end %>
+	<%= submit_tag 'Check for buses!' %>
+	<% end %>
+</div>
